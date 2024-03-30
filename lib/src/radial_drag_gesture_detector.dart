@@ -30,24 +30,18 @@ class RadialDragGestureDetector extends StatefulWidget {
 class _RadialDragGestureDetectorState extends State<RadialDragGestureDetector> {
 
   _onPanStart(DragStartDetails details) {
-    if (null != widget.onRadialDragStart) {
-      final polarCoord = _polarCoordFromGlobalOffset(details.globalPosition);
-      widget.onRadialDragStart(polarCoord);
+    final polarCoord = _polarCoordFromGlobalOffset(details.globalPosition);
+    widget.onRadialDragStart(polarCoord);
     }
-  }
 
   _onPanUpdate(DragUpdateDetails details) {
-    if (null != widget.onRadialDragUpdate) {
-      final polarCoord = _polarCoordFromGlobalOffset(details.globalPosition);
-      widget.onRadialDragUpdate(polarCoord);
+    final polarCoord = _polarCoordFromGlobalOffset(details.globalPosition);
+    widget.onRadialDragUpdate(polarCoord);
     }
-  }
 
   _onPanEnd(DragEndDetails details) {
-    if (null != widget.onRadialDragEnd) {
-      widget.onRadialDragEnd();
+    widget.onRadialDragEnd();
     }
-  }
 
   _polarCoordFromGlobalOffset(globalOffset) {
     // Convert the user's global touch offset to an offset that is local to
